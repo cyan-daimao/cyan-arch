@@ -33,7 +33,7 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
 
         <!-- 数据库 -->
-        <mybatis-plus.version>3.5.5</mybatis-plus.version>
+        <mybatis-plus.version>3.5.7</mybatis-plus.version>
         <mysql-connector.version>8.3.0</mysql-connector.version>
 
         <!-- 日志 -->
@@ -130,6 +130,11 @@
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

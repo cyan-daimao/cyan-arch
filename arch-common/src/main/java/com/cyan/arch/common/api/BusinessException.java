@@ -1,18 +1,15 @@
 package com.cyan.arch.common.api;
 
 /**
- * 不打印异常信息
- *
+ *  业务异常
  * @author cy.Y
  * @since 1.0.0
  */
-public class SilentException extends BaseException {
+public class BusinessException extends BaseException{
 
-
-    public SilentException(String msg) {
+    public BusinessException(String msg) {
         this.code = ErrorCode.FAILED.getCode();
         this.msg = msg;
     }
-
 
 }

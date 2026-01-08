@@ -10,9 +10,11 @@ public class SilentException extends BaseException {
 
 
     public SilentException(String msg) {
-        this.code = ErrorCode.FAILED.getCode();
-        this.msg = msg;
+        super(msg);
     }
 
+    public SilentException(String msg, Throwable e) {
+        super(msg, e);
+    }
 
 }

@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 基础异常
+ *
  * @author daimao
  * @since 1.0.0
  */
@@ -20,28 +21,28 @@ public class BaseException extends RuntimeException {
 
     protected String detail;
 
-    public BaseException(int code, String msg, String detail) {
-        this.code = code;
-        this.msg = msg;
-        this.detail = detail;
-    }
-
-    public BaseException(int code, String msg) {
-        this.code = code;
-        this.msg = msg;
-    }
 
     public BaseException(String msg) {
+        super(msg);
         this.code = ErrorCode.FAILED.getCode();
         this.msg = msg;
     }
 
-    public BaseException(ErrorCode errorCode) {
+
+    public BaseException(String msg, Throwable e) {
+        super(msg, e);
+        this.code = ErrorCode.FAILED.getCode();
+        this.msg = msg;
+    }
+
+    public BaseException(ErrorCode errorCode, Throwable e) {
+        super(errorCode.getMessage(), e);
         this.code = errorCode.getCode();
         this.msg = errorCode.getMessage();
     }
 
-    public BaseException(ErrorCode errorCode,String detail) {
+    public BaseException(ErrorCode errorCode, String detail, Throwable e) {
+        super(errorCode.getMessage(), e);
         this.code = errorCode.getCode();
         this.msg = errorCode.getMessage();
         this.detail = detail;

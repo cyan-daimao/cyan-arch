@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(BusinessException.class)
-    public Response<String> handleBusinessException(HttpServletRequest request, SilentException ex) {
+    public Response<String> handleBusinessException(HttpServletRequest request, BusinessException ex) {
         log.error("接口 [{}][{}]: {}", request.getMethod(), request.getRequestURI(), ex.getMessage(), ex);
         return Response.failed(ErrorCode.FAILED, ex.getMsg());
     }

@@ -40,7 +40,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns(
                         "/health",
                         "/login",
-                        "/rpc/**"
+                        "/rpc/**",
+                        "public/**"
                 );
     }
 }

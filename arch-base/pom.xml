@@ -102,6 +102,16 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!-- Feign 负载均衡依赖（关键缺失项） -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <!--  员工系统   -->
+        <dependency>
+            <groupId>com.cyan</groupId>
+            <artifactId>cyan-employee-client</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

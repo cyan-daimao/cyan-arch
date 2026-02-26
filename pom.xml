@@ -41,11 +41,18 @@
 
         <!-- 测试 -->
         <junit.version>5.10.2</junit.version>
+
+        <cyan-employee.version>1.0-SNAPSHOT</cyan-employee.version>
     </properties>
 
     <!-- 依赖管理（统一管控版本，子模块引用时无需指定版本） -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.cyan</groupId>
+                <artifactId>cyan-employee-client</artifactId>
+                <version>${cyan-employee.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.cyan</groupId>
                 <artifactId>arch-common</artifactId>

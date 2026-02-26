@@ -41,7 +41,7 @@ public class WebConfig implements WebMvcConfigurer {
                         "/health",
                         "/login",
                         "/rpc/**",
-                        "public/**"
+                        "/public/**"
                 );
     }
 }

@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
 
     // 专门处理 NoHandlerFoundException（404）
     @ExceptionHandler(NoHandlerFoundException.class)
-    public Response<?> handleNoHandlerFoundException(HttpServletRequest request, NoHandlerFoundException ex) {
+    public Response<?> handleNoHandlerFoundException(HttpServletRequest request) {
         String requestUri = request.getRequestURI();
         // 区分 favicon.ico 和真实业务接口的 404
         if ("/favicon.ico".equals(requestUri)) {
@@ -45,7 +45,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(LoginException.class)
     public Response<String> loginException(HttpServletRequest request,HttpServletResponse response, LoginException ex) {
         response.setStatus(Convert.toInteger(ErrorCode.UNAUTHORIZED.getCode()));
-        log.error("接口 [{}][{}]: {}", request.getMethod(), request.getRequestURI(), ex.getMessage(), ex);
+        log.error("接口 [{}][{}]: {}", request.getMethod(), request.getRequestURI(), ex.getMessage());
         return Response.failed(ErrorCode.UNAUTHORIZED, "");
     }
 

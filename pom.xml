@@ -50,11 +50,6 @@
         <dependencies>
             <dependency>
                 <groupId>com.cyan</groupId>
-                <artifactId>cyan-employee-client</artifactId>
-                <version>${cyan-employee.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.cyan</groupId>
                 <artifactId>arch-common</artifactId>
                 <version>${arch.version}</version>
             </dependency>

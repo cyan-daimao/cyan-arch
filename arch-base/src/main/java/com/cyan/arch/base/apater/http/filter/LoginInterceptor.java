@@ -1,6 +1,7 @@
 package com.cyan.arch.base.apater.http.filter;
 
 import com.cyan.arch.common.api.ErrorCode;
+import com.cyan.arch.common.api.LoginException;
 import com.cyan.arch.common.api.Response;
 import com.cyan.employee.client.LoginClient;
 import com.cyan.employee.client.dto.EmployeeDTO;
@@ -12,7 +13,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.security.auth.login.LoginException;
 
 /**
  * 登陆拦截器

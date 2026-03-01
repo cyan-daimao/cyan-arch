@@ -1,8 +1,6 @@
 package com.cyan.arch.common.util;
 
 
-
-
 import com.cyan.arch.common.datetime.DatePattern;
 
 import java.sql.Time;
@@ -247,8 +245,10 @@ public class Convert {
         }
         return null;
     }
+
     /**
      * 将对象转换为Long类型
+     *
      * @param obj 要转换的对象
      * @return 转换后的Long类型，如果转换失败则返回0
      */
@@ -293,6 +293,7 @@ public class Convert {
 
     /**
      * 将字符串转换为Integer类型
+     *
      * @param str 字符串
      * @return Integer类型
      */
@@ -304,7 +305,12 @@ public class Convert {
 
         // 如果已经是Long类型，直接返回
         if (obj instanceof Long) {
-            return (Integer) obj;
+            Long longVal = (Long) obj;
+            // 可选：校验Long值是否超出Integer范围，避免溢出
+            if (longVal > Integer.MAX_VALUE || longVal < Integer.MIN_VALUE) {
+                throw new IllegalArgumentException("Long值 " + longVal + " 超出Integer取值范围");
+            }
+            return longVal.intValue();
         }
 
         // 如果是Number类型，直接转换
@@ -334,4 +340,5 @@ public class Convert {
             return null;
         }
     }
+
 }

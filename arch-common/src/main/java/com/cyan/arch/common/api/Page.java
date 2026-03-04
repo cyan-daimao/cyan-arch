@@ -38,20 +38,13 @@ public class Page<T> {
      */
     private long total;
 
-    /**
-     * 总页数
-     */
-    private long pageCount;
-
 
     /**
      * 获取总页数
      *
-     * @param total 总数
-     * @param size  当前页大小
      * @return 总页数
      */
-    public static long getPageCount(long total, long size) {
+    public long getPageCount() {
         return total % size == 0 ? total / size : total / size + 1;
     }
 }

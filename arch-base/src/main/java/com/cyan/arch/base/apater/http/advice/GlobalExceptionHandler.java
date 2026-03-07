@@ -45,7 +45,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(LoginException.class)
     public Response<String> loginException(HttpServletRequest request,HttpServletResponse response, LoginException ex) {
         response.setStatus(Convert.toInteger(ErrorCode.UNAUTHORIZED.getCode()));
-        log.error("接口 [{}][{}]: {}", request.getMethod(), request.getRequestURI(), ex.getMessage());
+        log.error("接口 [{}][{}] 登陆异常: {}", request.getMethod(), request.getRequestURI(), ex.getMessage());
         return Response.failed(ErrorCode.UNAUTHORIZED, "");
     }
 
@@ -74,7 +74,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(SilentException.class)
     public Response<String> handleBaseException(HttpServletRequest request,SilentException ex) {
-        log.error("接口 [{}][{}]: {}", request.getMethod(), request.getRequestURI(), ex.getMessage(), ex);
+        log.error("接口 [{}][{}] SilentException: {}", request.getMethod(), request.getRequestURI(), ex.getMessage());
         return Response.failed(ErrorCode.FAILED, ex.getMsg());
     }
 

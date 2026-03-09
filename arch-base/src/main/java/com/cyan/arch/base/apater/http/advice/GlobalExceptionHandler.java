@@ -33,7 +33,7 @@ public class GlobalExceptionHandler {
         if ("/favicon.ico".equals(requestUri)) {
             log.debug("浏览器请求 favicon.ico 无匹配处理器，忽略");
         } else {
-            log.warn("接口 [{}][{}] 不存在（无匹配的处理器）", request.getMethod(), requestUri);
+            log.warn("不存在Http接口 [{}][{}] ", request.getMethod(), requestUri);
         }
         // 返回标准 404 响应
         return Response.failed(ErrorCode.NOT_FOUND, "接口不存在");

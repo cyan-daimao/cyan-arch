@@ -13,7 +13,7 @@ public class Assert {
      * 断言
      */
     public static void isTrue(boolean flag, BaseException e) {
-        if (flag){
+        if (!flag){
             throw e;
         }
     }

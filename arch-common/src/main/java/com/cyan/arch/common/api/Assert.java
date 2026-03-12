@@ -5,6 +5,7 @@ import com.cyan.arch.common.util.CollUtils;
 import java.util.Collection;
 
 /**
+ * 断言
  * @author cy.Y
  * @since 1.0.0
  */
@@ -18,6 +19,14 @@ public class Assert {
         }
     }
 
+    /**
+     * 断言
+     */
+    public static void isFalse(boolean flag, BaseException e) {
+        if (flag){
+            throw e;
+        }
+    }
     /**
      * 断言
      */

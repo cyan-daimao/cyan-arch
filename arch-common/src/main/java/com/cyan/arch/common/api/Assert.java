@@ -53,5 +53,47 @@ public class Assert {
             throw e;
         }
     }
+    /**
+     * 断言
+     */
+    public static void isTrue(boolean flag, String msg) {
+        if (!flag){
+            throw new SilentException(msg);
+        }
+    }
 
+    /**
+     * 断言
+     */
+    public static void isFalse(boolean flag, String msg) {
+        if (flag){
+            throw new SilentException(msg);
+        }
+    }
+    /**
+     * 断言
+     */
+    public static void notNull(Object obj, String msg) {
+        if (obj == null){
+            throw new SilentException(msg);
+        }
+    }
+
+    /**
+     * 断言
+     */
+    public static void notBlank(String str, String msg) {
+        if (str == null || str.isEmpty()){
+            throw new SilentException(msg);
+        }
+    }
+
+    /**
+     * 断言
+     */
+    public static void notEmpty(Collection<?> collection,String msg) {
+        if (CollUtils.isEmpty(collection)){
+            throw new SilentException(msg);
+        }
+    }
 }

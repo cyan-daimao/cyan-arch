@@ -11,7 +11,7 @@ import java.util.Collection;
  */
 public class Assert {
     /**
-     * 断言
+     *  flag 为true，则抛出异常
      */
     public static void isTrue(boolean flag, BaseException e) {
         if (!flag){
@@ -20,7 +20,7 @@ public class Assert {
     }
 
     /**
-     * 断言
+     * flag 为false，则抛出异常
      */
     public static void isFalse(boolean flag, BaseException e) {
         if (flag){
@@ -28,16 +28,24 @@ public class Assert {
         }
     }
     /**
-     * 断言
+     * obj不能为空，否则抛出异常
      */
     public static void notNull(Object obj, BaseException e) {
         if (obj == null){
             throw e;
         }
     }
+    /**
+     * obj必须为空，否则抛出异常
+     */
+    public static void isNull(Object obj, BaseException e) {
+        if (obj == null){
+            throw e;
+        }
+    }
 
     /**
-     * 断言
+     * str不能为空字符串
      */
     public static void notBlank(String str, BaseException e) {
         if (str == null || str.isEmpty()){
@@ -46,7 +54,16 @@ public class Assert {
     }
 
     /**
-     * 断言
+     * str必须为空字符串
+     */
+    public static void isBlank(String str, BaseException e) {
+        if (str == null || str.isEmpty()){
+            return;
+        }
+        throw e;
+    }
+    /**
+     * collection不能为空，否则抛出异常
      */
     public static void notEmpty(Collection<?> collection, BaseException e) {
         if (CollUtils.isEmpty(collection)){
@@ -54,4 +71,13 @@ public class Assert {
         }
     }
 
+    /**
+     * collection必须为空，否则抛出异常
+     */
+    public static void isEmpty(Collection<?> collection, BaseException e) {
+        if (CollUtils.isEmpty(collection)){
+            return;
+        }
+        throw e;
+    }
 }

@@ -39,7 +39,7 @@ public class Assert {
      * obj必须为空，否则抛出异常
      */
     public static void isNull(Object obj, BaseException e) {
-        if (obj == null){
+        if (obj != null){
             throw e;
         }
     }

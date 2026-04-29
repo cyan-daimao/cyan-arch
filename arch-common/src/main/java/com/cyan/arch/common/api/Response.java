@@ -40,7 +40,7 @@ public class Response<T> {
      * @return 返回一个响应
      */
     public static <T> Response<T> success() {
-        return new Response<>(ErrorCode.SUCCESS.getCode(), ErrorCode.SUCCESS.getMessage(), null, null);
+        return new Response<>(ErrorCode.SUCCESS.getCode(), null, null, null);
     }
 
     /**
@@ -50,9 +50,19 @@ public class Response<T> {
      * @return 返回一个响应
      */
     public static <T> Response<T> success(T data) {
-        return new Response<>(ErrorCode.SUCCESS.getCode(), ErrorCode.SUCCESS.getMessage(), data, null);
+        return new Response<>(ErrorCode.SUCCESS.getCode(), null, data, null);
     }
 
+    /**
+     * 创建一个成功的响应
+     *
+     * @param data 返回值
+     * @param msg 额外信息
+     * @return 返回一个响应
+     */
+    public static <T> Response<T> success(T data,String msg) {
+        return new Response<>(ErrorCode.SUCCESS.getCode(), msg, data, null);
+    }
     /**
      * 创建一个失败的响应
      *

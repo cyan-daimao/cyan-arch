@@ -12,23 +12,23 @@ import java.util.Date;
  */
 @Component
 public class MapstructConvert {
-    public Long toLong(Object obj) {
+    public static Long toLong(Object obj) {
         return Convert.toLong(obj);
     }
 
-    public Integer toInteger(Object obj) {
+    public static Integer toInteger(Object obj) {
         return Convert.toInteger(obj);
     }
 
-    public String toString(Object obj) {
+    public static String toString(Object obj) {
         return Convert.toStr(obj);
     }
 
-    public LocalDateTime toLocalDateTime(String obj) {
+    public static LocalDateTime toLocalDateTime(String obj) {
         return Convert.parse(obj);
     }
 
-    public Date toDate(String obj){
+    public static Date toDate(String obj){
         return Convert.toDate(obj);
     }
 }

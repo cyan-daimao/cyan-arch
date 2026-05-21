@@ -1,6 +1,7 @@
-package com.cyan.arch.common.mapstruct;
+package com.cyan.arch.base.mapstruct;
 
 import com.cyan.arch.common.util.Convert;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.Date;
  * @author cy.Y
  * @since 1.0.0
  */
+@Component
 public class MapstructConvert {
     public Long toLong(Object obj) {
         return Convert.toLong(obj);
